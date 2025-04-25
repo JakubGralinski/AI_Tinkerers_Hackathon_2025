@@ -1,0 +1,31 @@
+name,sport_type,distance_km,moving_time_min,elapsed_time_min,elevation_gain_m,average_heartrate,max_heartrate,average_speed_kmh,start_date,start_latlng,end_latlng,kudos_count,suffer_score
+Afternoon workout 💪,WeightTraining,0.0,48.5,48.5,0,n/a,n/a,0.0,2025-04-24,[],[],3,n/a
+Afternoon workout 💪,WeightTraining,0.0,111.5,111.5,0,n/a,n/a,0.0,2025-04-23,[],[],2,n/a
+Evening Run,Run,5.23,30.1,30.2,33.0,185.4,200.0,10.41,2025-04-22,"[52.156127, 21.030813]","[52.156736, 21.028873]",8,95.0
+Evening workout 🏋️,WeightTraining,0.0,94.6,94.6,0,n/a,n/a,0.0,2025-04-21,[],[],2,n/a
+Morning Run,Run,5.1,29.3,29.6,31.0,183.4,200.0,10.44,2025-04-21,"[52.156189, 21.030913]","[52.157419, 21.027581]",4,88.0
+Morning workout ☀️,WeightTraining,0.0,68.6,68.6,0,n/a,n/a,0.0,2025-04-19,[],[],2,n/a
+Evening workout 🏋️,WeightTraining,0.0,79.0,79.0,0,n/a,n/a,0.0,2025-04-18,[],[],5,n/a
+Lunch Run,Run,4.04,22.2,25.9,14.0,190.4,209.0,10.91,2025-04-17,"[52.156015, 21.030741]","[52.161952, 21.024783]",6,76.0
+Afternoon workout 💪,WeightTraining,0.0,108.2,108.2,0,n/a,n/a,0.0,2025-04-14,[],[],1,n/a
+Lunch Run,Run,5.1,29.2,29.4,27.8,190.7,208.0,10.48,2025-04-13,"[52.156113, 21.030801]","[52.157372, 21.027646]",5,104.0
+Morning workout ☀️,WeightTraining,0.0,91.2,91.2,0,n/a,n/a,0.0,2025-04-12,[],[],3,n/a
+Afternoon workout 💪,WeightTraining,0.0,101.2,101.2,0,n/a,n/a,0.0,2025-04-11,[],[],1,n/a
+Paris Run🥖🇫🇷,Run,5.06,29.4,33.3,27.2,n/a,n/a,10.3,2025-04-05,"[48.819636, 2.326006]","[48.819666, 2.326073]",5,n/a
+Afternoon workout 💪,WeightTraining,0.0,107.9,107.9,0,n/a,n/a,0.0,2025-04-02,[],[],3,n/a
+Afternoon workout 💪,WeightTraining,0.0,109.3,109.3,0,n/a,n/a,0.0,2025-03-31,[],[],2,n/a
+Afternoon workout 💪,WeightTraining,0.0,77.6,77.6,0,n/a,n/a,0.0,2025-03-29,[],[],1,n/a
+Late night workout 🌙,WeightTraining,0.0,108.6,108.6,0,n/a,n/a,0.0,2025-03-28,[],[],4,n/a
+Afternoon Run,Run,5.22,29.1,29.3,38.8,185.1,207.0,10.77,2025-03-27,"[52.156133, 21.030953]","[52.156683, 21.028956]",4,93.0
+Afternoon workout 💪,WeightTraining,0.0,94.0,94.0,0,n/a,n/a,0.0,2025-03-26,[],[],2,n/a
+Afternoon workout 💪,WeightTraining,0.0,107.2,107.2,0,n/a,n/a,0.0,2025-03-24,[],[],2,n/a
+Afternoon workout 💪,WeightTraining,0.0,90.3,90.3,0,n/a,n/a,0.0,2025-03-22,[],[],2,n/a
+Evening workout 🏋️,WeightTraining,0.0,72.0,72.0,0,n/a,n/a,0.0,2025-03-21,[],[],1,n/a
+Lunch Run,Run,5.51,32.2,32.4,34.2,182.1,205.0,10.26,2025-03-20,"[52.156318, 21.031132]","[52.155207, 21.031961]",3,87.0
+Evening workout 🏋️,WeightTraining,0.0,62.9,62.9,0,n/a,n/a,0.0,2025-03-19,[],[],1,n/a
+Afternoon workout 💪,WeightTraining,0.0,108.1,108.1,0,n/a,n/a,0.0,2025-03-17,[],[],4,n/a
+Evening workout 🏋️,WeightTraining,0.0,45.6,45.6,0,n/a,n/a,0.0,2025-03-14,[],[],1,n/a
+Afternoon workout 💪,WeightTraining,0.0,90.0,90.0,0,n/a,n/a,0.0,2025-03-13,[],[],1,n/a
+Late night workout 🌙,WeightTraining,0.0,75.8,75.8,0,n/a,n/a,0.0,2025-03-11,[],[],2,n/a
+Afternoon workout 💪,WeightTraining,0.0,103.2,103.2,0,n/a,n/a,0.0,2025-03-10,[],[],2,n/a
+Morning workout ☀️,WeightTraining,0.0,62.0,62.0,0,n/a,n/a,0.0,2025-03-08,[],[],1,n/a
