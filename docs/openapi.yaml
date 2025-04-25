@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: AI Meal and Exercise Planner API
+  description: |
+    This API uses an OpenAI agent to generate a structured meal and exercise plan for a week, based on a free-form user prompt.
+  version: 1.0.0
+
+servers:
+  - url: http://127.0.0.1:5000
+
+paths:
+  /api/plans/:
+    post:
+      summary: Generate Weekly Meal and Exercise Plan
+      description: |
+        Accepts a free-form user prompt (e.g., "I want a fat-loss meal plan and beginner gym program") and returns a full structured weekly plan.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                instructions:
+                  type: string
+                  description: Free-form user input describing goals
+              required:
+                - instructions
+            example:
+              instructions: "Give me a 2000 kcal meal plan and a 5-day workout plan for strength and endurance."
+      responses:
+        "200":
+          description: Successfully generated plan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  plan:
+                    type: object
+                    properties:
+                      exercise_plan:
+                        type: object
+                        properties:
+                          exercise_plan:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                day:
+                                  type: integer
+                                  example: 1
+                                exercises:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      name:
+                                        type: string
+                                        example: "Barbell Bench Press"
+                                      reps:
+                                        type: integer
+                                        example: 8
+                                      sets:
+                                        type: integer
+                                        example: 4
+                                      rest_time:
+                                        type: integer
+                                        description: Rest time between sets in seconds
+                                        example: 90
+                      meal_plan:
+                        type: object
+                        properties:
+                          meal_plan:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                meal:
+                                  type: string
+                                  example: "Day 1 – Breakfast: Greek-Yogurt Parfait"
+                                ingredients:
+                                  type: array
+                                  items:
+                                    type: string
+                                  example:
+                                    - "200 g non-fat Greek yogurt"
+                                    - "40 g rolled oats"
+                                calories:
+                                  type: integer
+                                  example: 420
+                                instructions:
+                                  type: string
+                                  example: "Layer yogurt, oats, and berries in a bowl; sprinkle chia seeds and drizzle honey on top."
+                  success:
+                    type: boolean
+                    example: true
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Missing prompt"
