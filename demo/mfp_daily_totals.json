@@ -1,0 +1,58 @@
+[
+  {
+    "date": "2025-04-19",
+    "calories": 3029.0,
+    "carbohydrates": 401.0,
+    "fat": 67.0,
+    "protein": 165.0
+  },
+  {
+    "date": "2025-04-20",
+    "calories": 2337.0,
+    "carbohydrates": 159.0,
+    "fat": 130.0,
+    "protein": 130.0
+  },
+  {
+    "date": "2025-04-21",
+    "calories": 2879.0,
+    "carbohydrates": 395.0,
+    "fat": 84.0,
+    "protein": 148.0
+  },
+  {
+    "date": "2025-04-22",
+    "calories": 2439.0,
+    "carbohydrates": 204.0,
+    "fat": 124.0,
+    "protein": 137.0
+  },
+  {
+    "date": "2025-04-23",
+    "calories": 2231.0,
+    "carbohydrates": 315.0,
+    "fat": 54.0,
+    "protein": 124.0
+  },
+  {
+    "date": "2025-04-24",
+    "calories": 2478.0,
+    "carbohydrates": 348.0,
+    "fat": 68.0,
+    "protein": 137.0
+  },
+  {
+    "date": "2025-04-25",
+    "calories": 2365.0,
+    "carbohydrates": 346.0,
+    "fat": 55.0,
+    "protein": 140.0
+  },
+  {
+    "date": "2025-04-26",
+    "calories": 2525.0,
+    "carbohydrates": 220.0,
+    "fat": 124.0,
+    "protein": 140.0
+  }
+]
