@@ -2,3 +2,4 @@
 openai-realtime-agents/.env
 *.pyc
 *.sqlite3
+.env
