@@ -150,3 +150,6 @@ Tasks:
             ],
         )
         return resp.choices[0].message.content
+
+agent = NutritionPlannerAgent(client, user_profile_path="user_profile.json")
+print(agent.plan_meals(mfp_data, strava_data))
