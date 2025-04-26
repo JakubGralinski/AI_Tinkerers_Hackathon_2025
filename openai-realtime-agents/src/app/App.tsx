@@ -17,6 +17,7 @@ import { AgentConfig, SessionStatus } from "@/app/types";
 // Context providers & hooks
 import { useTranscript } from "@/app/contexts/TranscriptContext";
 import { useEvent } from "@/app/contexts/EventContext";
+import { useTheme } from "@/app/contexts/ThemeContext";
 import { useHandleServerEvent } from "./hooks/useHandleServerEvent";
 
 // Utilities
@@ -27,6 +28,7 @@ import { allAgentSets, defaultAgentSetKey } from "@/app/agentConfigs";
 
 function App() {
   const searchParams = useSearchParams();
+  const { theme } = useTheme();
 
   const { transcriptItems, addTranscriptMessage, addTranscriptBreadcrumb } =
     useTranscript();
@@ -404,8 +406,8 @@ function App() {
   const agentSetKey = searchParams.get("agentConfig") || "default";
 
   return (
-    <div className="text-base flex flex-col h-screen bg-gray-100 text-gray-800 relative">
-      <div className="p-5 text-lg font-semibold flex justify-between items-center">
+    <div className="text-base flex flex-col h-screen bg-background text-text-primary relative">
+      <div className="p-5 text-lg font-semibold flex justify-between items-center border-b border-card-border">
         <div className="flex items-center">
           <div onClick={() => window.location.reload()} style={{ cursor: 'pointer' }}>
             <Image
@@ -413,11 +415,11 @@ function App() {
               alt="OpenAI Logo"
               width={20}
               height={20}
-              className="mr-2"
+              className="mr-2 invert"
             />
           </div>
           <div>
-            Realtime API <span className="text-gray-500">Agents</span>
+            Realtime API <span className="text-accent">Agents</span>
           </div>
         </div>
         <div className="flex items-center">
@@ -425,7 +427,7 @@ function App() {
             Personality
           </label>
           <div className="relative inline-block">
-            <select value={agentSetKey} onChange={handleAgentChange} className="appearance-none mr-6 border border-gray-300 rounded-lg text-base px-1 py-1 pr-3 cursor-pointer font-normal focus:outline-none">
+            <select value={agentSetKey} onChange={handleAgentChange} className="appearance-none mr-6 border border-card-border rounded-lg text-base px-1 py-1 pr-3 cursor-pointer font-normal focus:outline-none bg-card-bg text-text-primary focus:border-accent">
               <option value="David Goggins">David Goggins</option>
               <option value="Arnold Schawrzenegger">Arnold Schawrzenegger</option>
               <option value="Anna Senyszyn">Anna Senyszyn</option>
@@ -438,7 +440,7 @@ function App() {
             <select
               value={agentSetKey}
               onChange={handleAgentChange}
-              className="appearance-none border border-gray-300 rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none"
+              className="appearance-none border border-card-border rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none bg-card-bg text-text-primary focus:border-accent"
             >
               {Object.keys(allAgentSets).map((agentKey) => (
                 <option key={agentKey} value={agentKey}>
@@ -446,7 +448,7 @@ function App() {
                 </option>
               ))}
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-gray-600">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-accent">
               <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                 <path
                   fillRule="evenodd"
@@ -466,7 +468,7 @@ function App() {
                 <select
                   value={selectedAgentName}
                   onChange={handleSelectedAgentChange}
-                  className="appearance-none border border-gray-300 rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none"
+                  className="appearance-none border border-card-border rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none bg-card-bg text-text-primary focus:border-accent"
                 >
                   {selectedAgentConfigSet?.map(agent => (
                     <option key={agent.name} value={agent.name}>
@@ -474,7 +476,7 @@ function App() {
                     </option>
                   ))}
                 </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-gray-600">
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-accent">
                   <svg
                     className="h-4 w-4"
                     viewBox="0 0 20 20"

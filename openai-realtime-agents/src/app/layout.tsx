@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { useEffect } from 'react';
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 // Suppress hydration warnings
 if (typeof window !== 'undefined') {
@@ -27,8 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+    <html lang="en" className="dark">
+      <body className={`antialiased`}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
