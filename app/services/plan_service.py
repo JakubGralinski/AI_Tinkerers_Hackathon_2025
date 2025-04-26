@@ -6,8 +6,6 @@ from app.agents.plan.response_schemas import MealPlanSchema
 from app.agents.plan.response_schemas import ExercisePlanSchema
 import asyncio
 
-
-
 async def plan_week(user_prompt: str):
     meal_task = Runner.run(
         meal_plan_agent,
