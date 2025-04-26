@@ -106,36 +106,64 @@ class NutritionPlannerAgent:
         target_cal, target_prot, target_carb, target_fat = self._predict_targets(strava_sum)
 
         # Build prompt
+        # Build prompt
         prompt = f"""
-You are a Nutrition & Fitness AI Assistant.
-User profile:
-- Height: {self.height_cm} cm
-- Weight: {self.weight_kg} kg
-- Diet: {self.diet_pref}
-- Budget: {self.daily_budget or 'no limit'} USD
-Recent nutrition 7-day avg: {avg_cal} kcal (P:{avg_prot}g, C:{avg_carb}g, F:{avg_fat}g)
-Recent workouts:
-"""
+        You are a professional AI Nutritionist and Fitness Coach.
+
+        User profile:
+        - Height: {self.height_cm} cm
+        - Weight: {self.weight_kg} kg
+        - Dietary preference: {self.diet_pref}
+        - Daily budget: {self.daily_budget or 'no limit'} USD
+
+        Recent nutrition (7-day average):
+        - Energy intake: {avg_cal} kcal
+        - Protein: {avg_prot} g
+        - Carbohydrates: {avg_carb} g
+        - Fat: {avg_fat} g
+
+        Recent workouts:
+        """
         for w in strava_sum:
-            prompt += f"  • {w['name']} ({w['session']}) – {w['km']} km on {w['date']} (burned ~{w['est_burn']} kcal)\n"
+            prompt += f"  • {w['name']} ({w['session']}) — {w['km']} km on {w['date']} (approx. {w['est_burn']} kcal burned)\n"
 
         prompt += f"""
 
-Target daily:
-- Calories: {target_cal} kcal
-- Protein: {target_prot} g
-- Carbs: {target_carb} g
-- Fat: {target_fat} g
+        Training Targets:
+        - Daily Calories: {target_cal} kcal
+        - Protein: {target_prot} g
+        - Carbohydrates: {target_carb} g
+        - Fat: {target_fat} g
 
-Tasks:
-- Provide a brief analysis of the user’s current workouts and eating habits, and identify specific areas for improvement.
-- Ensure each of the {self.plan_days} days meets these targets exactly.
-- Provide breakfast, lunch, dinner, snacks with macros & calories.
-"""
+        🛠️ Your tasks:
+        1. Analyze the user's nutrition and training history to highlight any imbalances or opportunities for improvement.
+        2. Design a {self.plan_days}-day detailed daily meal plan matching the target macros and calories.
+        3. Each day must include:
+            - Breakfast
+            - Lunch
+            - Dinner
+            - 2 Snack ideas
+        4. For each meal/snack, provide:
+            - Meal name
+            - Estimated calories
+            - Macros (Protein/Carbs/Fats) in grams
+            - Key ingredients
+            - Short preparation instructions
+        """
         if self.include_recipes:
-            prompt += "- Instead of writing out full recipes, include for each meal one URL to a reputable online recipe that matches the dish.\n"
-        prompt += f"- Keep within the budget of {self.daily_budget or 'no limit'} USD per day.\n"
-        prompt += "Provide the plan day-by-day."
+            prompt += "- Additionally, suggest a URL link to a trusted recipe website for each dish.\n"
+
+        prompt += f"""
+        Constraints:
+        - Stay within the budget of {self.daily_budget or 'no limit'} USD per day.
+        - Keep meals practical, easy to prepare, and healthy.
+        - Vary meals across days to avoid repetition.
+        - Focus on balanced, high-quality nutrition suitable for an athlete improving endurance and strength.
+
+        Respond in a clean, structured format.
+
+        Thank you!
+        """
 
         # Call API
         resp = self.client.chat.completions.create(
@@ -146,3 +174,6 @@ Tasks:
             ],
         )
         return resp.choices[0].message.content
+
+agent = NutritionPlannerAgent(client, user_profile_path="user_profile.json")
+print(agent.plan_meals(mfp_data, strava_data))

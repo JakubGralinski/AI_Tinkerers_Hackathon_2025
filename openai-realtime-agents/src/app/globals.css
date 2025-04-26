@@ -5,13 +5,27 @@
 :root {
   --background: #fafafa;
   --foreground: #171717;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --text-primary: #171717;
+  --text-secondary: #4b5563;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --error: #ef4444;
+  --success: #10b981;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #1a1a1a;
+  --foreground: #f8f8f2;
+  --card-bg: #2a2a2a;
+  --card-border: #3a3a3a;
+  --text-primary: #f8f8f2;
+  --text-secondary: #cccccc;
+  --accent: #ff7b00;
+  --accent-hover: #ff9e00;
+  --error: #ff5555;
+  --success: #50fa7b;
 }
 
 body {

@@ -8,7 +8,6 @@ from agents import Agent, Runner
 import json
 from app.config import Config
 
-
 with open("./demo/mfp_daily_totals_and_menu.json", encoding="utf-8") as f:
     mfp_data = json.load(f)
 with open("./demo/strava_activities.json", encoding="utf-8") as f:

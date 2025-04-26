@@ -17,6 +17,7 @@ import { AgentConfig, SessionStatus } from "@/app/types";
 // Context providers & hooks
 import { useTranscript } from "@/app/contexts/TranscriptContext";
 import { useEvent } from "@/app/contexts/EventContext";
+import { useTheme } from "@/app/contexts/ThemeContext";
 import { useHandleServerEvent } from "./hooks/useHandleServerEvent";
 
 // Utilities
@@ -27,6 +28,7 @@ import { allAgentSets, defaultAgentSetKey } from "@/app/agentConfigs";
 
 function App() {
   const searchParams = useSearchParams();
+  const { theme } = useTheme();
 
   const { transcriptItems, addTranscriptMessage, addTranscriptBreadcrumb } =
     useTranscript();
@@ -85,6 +87,7 @@ function App() {
       return;
     }
 
+    // Load the appropriate agent set based on the URL parameter
     const agents = allAgentSets[finalAgentConfig];
     const agentKeyToUse = agents[0]?.name || "";
 
@@ -235,15 +238,23 @@ function App() {
     const turnDetection = isPTTActive
       ? null
       : {
-          type: "server_vad",
-          threshold: 0.5,
-          prefix_padding_ms: 300,
-          silence_duration_ms: 200,
-          create_response: true,
-        };
+        type: "server_vad",
+        threshold: 0.5,
+        prefix_padding_ms: 300,
+        silence_duration_ms: 200,
+        create_response: true,
+      };
 
+    // Get current personality
+    const agentSetKey = searchParams.get("agentConfig") || defaultAgentSetKey;
+    const isPersonality = ["David Goggins", "Arnold Schawrzenegger", "Anna Senyszyn"].includes(agentSetKey);
+
+    // If a personality is selected, ensure we're using the personality-enhanced instructions
     const instructions = currentAgent?.instructions || "";
     const tools = currentAgent?.tools || [];
+
+    // Log to verify personality instructions are being used
+    console.log(`Updating session with agent: ${currentAgent?.name}, personality: ${agentSetKey}, instructions length: ${instructions.length}`);
 
     const sessionUpdateEvent = {
       type: "session.update",
@@ -403,40 +414,73 @@ function App() {
 
   const agentSetKey = searchParams.get("agentConfig") || "default";
 
+  // Determine if the current agentSetKey is a personality or a scenario
+  const isPersonality = ["David Goggins", "Arnold Schawrzenegger", "Anna Senyszyn"].includes(agentSetKey);
+
+  const handlePersonalityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newPersonality = e.target.value;
+
+    // When changing personality, always use the workoutPlanner scenario
+    const url = new URL(window.location.toString());
+    url.searchParams.set("agentConfig", newPersonality);
+
+    // Force reconnection to apply the new personality
+    if (sessionStatus === "CONNECTED") {
+      disconnectFromRealtime();
+    }
+
+    window.location.replace(url.toString());
+  };
+
+  // const handleScenarioChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const newScenario = e.target.value;
+  //   if (["workoutPlanner", "simpleExample"].includes(newScenario)) {
+  //     const url = new URL(window.location.toString());
+  //     url.searchParams.set("agentConfig", newScenario);
+  //     window.location.replace(url.toString());
+  //   }
+  // };
+
+  // Get the current scenario (or default to workoutPlanner if a personality is selected)
+  const currentScenario = isPersonality ? "workoutPlanner"
+    : ["workoutPlanner", "simpleExample"].includes(agentSetKey) ? agentSetKey
+      : "workoutPlanner";
+
+  // Get the current personality (or default to empty if a scenario is selected)
+  const currentPersonality = isPersonality ? agentSetKey : "";
+
   return (
-    <div className="text-base flex flex-col h-screen bg-gray-100 text-gray-800 relative">
-      <div className="p-5 text-lg font-semibold flex justify-between items-center">
+    <div className="text-base flex flex-col h-screen bg-background text-text-primary relative">
+      <div className="p-5 text-lg font-semibold flex justify-between items-center border-b border-card-border">
         <div className="flex items-center">
           <div onClick={() => window.location.reload()} style={{ cursor: 'pointer' }}>
             <Image
-              src="/openai-logomark.svg"
-              alt="OpenAI Logo"
-              width={20}
-              height={20}
+              src="/CrunchByteLogo.svg"
+              alt="CrunchByte Logo"
+              width={60}
+              height={60}
               className="mr-2"
             />
           </div>
           <div>
-            Realtime API <span className="text-gray-500">Agents</span>
+            CrunchByte <span className="text-gray-500">Agents</span>
           </div>
         </div>
         <div className="flex items-center">
           <label className="flex items-center text-base gap-1 mr-2 font-medium">
-            Scenario
+            Personality
           </label>
           <div className="relative inline-block">
             <select
-              value={agentSetKey}
-              onChange={handleAgentChange}
-              className="appearance-none border border-gray-300 rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none"
+              value={currentPersonality}
+              onChange={handlePersonalityChange}
+              className="appearance-none border border-card-border rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none bg-card-bg text-text-primary focus:border-accent"
             >
-              {Object.keys(allAgentSets).map((agentKey) => (
-                <option key={agentKey} value={agentKey}>
-                  {agentKey}
-                </option>
-              ))}
+              <option value="David Goggins">David Goggins</option>
+              <option value="Arnold Schawrzenegger">Arnold Schawrzenegger</option>
+              <option value="Anna Senyszyn">Anna Senyszyn</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-gray-600">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-accent">
               <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                 <path
                   fillRule="evenodd"
@@ -446,40 +490,6 @@ function App() {
               </svg>
             </div>
           </div>
-
-          {agentSetKey && (
-            <div className="flex items-center ml-6">
-              <label className="flex items-center text-base gap-1 mr-2 font-medium">
-                Agent
-              </label>
-              <div className="relative inline-block">
-                <select
-                  value={selectedAgentName}
-                  onChange={handleSelectedAgentChange}
-                  className="appearance-none border border-gray-300 rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none"
-                >
-                  {selectedAgentConfigSet?.map(agent => (
-                    <option key={agent.name} value={agent.name}>
-                      {agent.name}
-                    </option>
-                  ))}
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-gray-600">
-                  <svg
-                    className="h-4 w-4"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.23 7.21a.75.75 0 011.06.02L10 10.44l3.71-3.21a.75.75 0 111.04 1.08l-4.25 3.65a.75.75 0 01-1.04 0L5.21 8.27a.75.75 0 01.02-1.06z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
