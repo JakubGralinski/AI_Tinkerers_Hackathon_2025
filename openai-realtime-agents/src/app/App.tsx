@@ -432,14 +432,14 @@ function App() {
     window.location.replace(url.toString());
   };
 
-  const handleScenarioChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newScenario = e.target.value;
-    if (["workoutPlanner", "simpleExample"].includes(newScenario)) {
-      const url = new URL(window.location.toString());
-      url.searchParams.set("agentConfig", newScenario);
-      window.location.replace(url.toString());
-    }
-  };
+  // const handleScenarioChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const newScenario = e.target.value;
+  //   if (["workoutPlanner", "simpleExample"].includes(newScenario)) {
+  //     const url = new URL(window.location.toString());
+  //     url.searchParams.set("agentConfig", newScenario);
+  //     window.location.replace(url.toString());
+  //   }
+  // };
 
   // Get the current scenario (or default to workoutPlanner if a personality is selected)
   const currentScenario = isPersonality ? "workoutPlanner"
@@ -490,63 +490,6 @@ function App() {
               </svg>
             </div>
           </div>
-          <label className="flex items-center text-base gap-1 mr-2 font-medium ml-6">
-            Scenario
-          </label>
-          <div className="relative inline-block">
-            <select
-              value={currentScenario}
-              onChange={handleScenarioChange}
-              className="appearance-none border border-card-border rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none bg-card-bg text-text-primary focus:border-accent"
-              disabled={isPersonality}
-            >
-              <option value="workoutPlanner">workoutPlanner</option>
-              <option value="simpleExample">simpleExample</option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-accent">
-              <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                <path
-                  fillRule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.44l3.71-3.21a.75.75 0 111.04 1.08l-4.25 3.65a.75.75 0 01-1.04 0L5.21 8.27a.75.75 0 01.02-1.06z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
-
-          {agentSetKey && (
-            <div className="flex items-center ml-6">
-              <label className="flex items-center text-base gap-1 mr-2 font-medium">
-                Agent
-              </label>
-              <div className="relative inline-block">
-                <select
-                  value={selectedAgentName}
-                  onChange={handleSelectedAgentChange}
-                  className="appearance-none border border-card-border rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none bg-card-bg text-text-primary focus:border-accent"
-                >
-                  {selectedAgentConfigSet?.map(agent => (
-                    <option key={agent.name} value={agent.name}>
-                      {agent.name}
-                    </option>
-                  ))}
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-accent">
-                  <svg
-                    className="h-4 w-4"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.23 7.21a.75.75 0 011.06.02L10 10.44l3.71-3.21a.75.75 0 111.04 1.08l-4.25 3.65a.75.75 0 01-1.04 0L5.21 8.27a.75.75 0 01.02-1.06z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 

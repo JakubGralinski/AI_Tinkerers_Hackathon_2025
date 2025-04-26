@@ -1,6 +1,4 @@
 import { AgentConfig } from "@/app/types";
-import { injectTransferTools } from "./utils";
-
 
 const workout_planner: AgentConfig = {
   name: "workout_planner",
@@ -64,8 +62,3 @@ const workout_planner: AgentConfig = {
   },
   downstreamAgents: [],
 };
-
-// add the transfer tool to point to downstreamAgents
-const agents = injectTransferTools([workout_planner]);
-
-export default agents;

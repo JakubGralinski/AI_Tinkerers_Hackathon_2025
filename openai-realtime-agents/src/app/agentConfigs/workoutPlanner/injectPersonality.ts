@@ -26,12 +26,6 @@ export function injectPersonality(
         let personalityInstructions: string | undefined;
 
         switch (agent.name) {
-            case "profile_collector":
-                personalityInstructions = personality.profileCollectorInstructions;
-                break;
-            case "profile_analyzer":
-                personalityInstructions = personality.profileAnalyzerInstructions;
-                break;
             case "workout_planner":
                 personalityInstructions = personality.workoutPlannerInstructions;
                 break;
