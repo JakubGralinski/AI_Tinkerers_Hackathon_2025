@@ -235,12 +235,12 @@ function App() {
     const turnDetection = isPTTActive
       ? null
       : {
-          type: "server_vad",
-          threshold: 0.5,
-          prefix_padding_ms: 300,
-          silence_duration_ms: 200,
-          create_response: true,
-        };
+        type: "server_vad",
+        threshold: 0.5,
+        prefix_padding_ms: 300,
+        silence_duration_ms: 200,
+        create_response: true,
+      };
 
     const instructions = currentAgent?.instructions || "";
     const tools = currentAgent?.tools || [];
@@ -421,6 +421,16 @@ function App() {
           </div>
         </div>
         <div className="flex items-center">
+          <label className="flex items-center text-base gap-1 mr-2 font-medium">
+            Personality
+          </label>
+          <div className="relative inline-block">
+            <select value={agentSetKey} onChange={handleAgentChange} className="appearance-none mr-6 border border-gray-300 rounded-lg text-base px-1 py-1 pr-3 cursor-pointer font-normal focus:outline-none">
+              <option value="David Goggins">David Goggins</option>
+              <option value="Arnold Schawrzenegger">Arnold Schawrzenegger</option>
+              <option value="Anna Senyszyn">Anna Senyszyn</option>
+            </select>
+          </div>
           <label className="flex items-center text-base gap-1 mr-2 font-medium">
             Scenario
           </label>
