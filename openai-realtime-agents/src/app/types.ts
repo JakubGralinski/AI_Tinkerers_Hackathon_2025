@@ -35,6 +35,12 @@ export interface AgentConfig {
     (args: any, transcriptLogsFiltered: TranscriptItem[]) => Promise<any> | any
   >;
   downstreamAgents?: AgentConfig[] | { name: string; publicDescription: string }[];
+  personalityInstructions?: string; // Added field for personality-specific instructions
+}
+
+export interface AgentPersonality {
+  name: string;
+  instructions: string;
 }
 
 export type AllAgentConfigsType = Record<string, AgentConfig[]>;

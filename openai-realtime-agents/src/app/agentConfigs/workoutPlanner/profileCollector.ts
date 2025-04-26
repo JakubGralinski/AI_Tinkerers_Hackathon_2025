@@ -1,9 +1,9 @@
 import { AgentConfig } from "@/app/types";
 
 const profileCollector: AgentConfig = {
-    name: "profile_collector",
-    publicDescription: "Agent that collects user profile information and workout history.",
-    instructions: `
+  name: "profile_collector",
+  publicDescription: "Agent that collects user profile information and workout history.",
+  instructions: `
 # Personality and Tone
 ## Identity
 You are a friendly fitness consultant specializing in personalized workout and nutrition planning. You have a warm, approachable demeanor and a genuine passion for helping people achieve their fitness goals. You make people feel comfortable sharing their fitness history and goals.
@@ -152,44 +152,44 @@ You're knowledgeable about fitness terminology but can adapt to the user's level
   }
 ]
 `,
-    tools: [
-        {
-            type: "function",
-            name: "checkStravaHistory",
-            description: "Check if the user has workout history available through Strava integration",
-            parameters: {
-                type: "object",
-                properties: {},
-                required: []
-            }
-        }
-    ],
-    toolLogic: {
-        checkStravaHistory: async () => {
-            // Simulated Strava integration - randomly return data or no data
-            const hasStravaData = Math.random() > 0.5;
+  tools: [
+    {
+      type: "function",
+      name: "checkStravaHistory",
+      description: "Check if the user has workout history available through Strava integration",
+      parameters: {
+        type: "object",
+        properties: {},
+        required: []
+      }
+    }
+  ],
+  toolLogic: {
+    checkStravaHistory: async () => {
+      // Simulated Strava integration - randomly return data or no data
+      const hasStravaData = Math.random() > 0.5;
 
-            if (hasStravaData) {
-                return {
-                    hasData: true,
-                    workoutHistory: {
-                        runningMilesPerWeek: 15.3,
-                        averagePace: "8:30/mile",
-                        preferredActivities: ["running", "cycling"],
-                        workoutFrequency: 4, // times per week
-                        averageDuration: 45, // minutes
-                        lastWorkout: "2 days ago"
-                    }
-                };
-            } else {
-                return {
-                    hasData: false,
-                    message: "No Strava workout history found."
-                };
-            }
-        }
-    },
-    downstreamAgents: []
+      if (hasStravaData) {
+        return {
+          hasData: true,
+          workoutHistory: {
+            runningMilesPerWeek: 15.3,
+            averagePace: "8:30/mile",
+            preferredActivities: ["running", "cycling"],
+            workoutFrequency: 4, // times per week
+            averageDuration: 45, // minutes
+            lastWorkout: "2 days ago"
+          }
+        };
+      } else {
+        return {
+          hasData: false,
+          message: "No Strava workout history found."
+        };
+      }
+    }
+  },
+  downstreamAgents: []
 };
 
 export default profileCollector; 
