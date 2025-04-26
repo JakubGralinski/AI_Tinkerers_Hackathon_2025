@@ -18,8 +18,8 @@ if (typeof window !== 'undefined') {
 }
 
 export const metadata: Metadata = {
-  title: "Realtime API Agents",
-  description: "A demo app from OpenAI.",
+  title: "AI Wellness Coach",
+  description: "OpenAI agentic wellness coach",
 };
 
 export default function RootLayout({

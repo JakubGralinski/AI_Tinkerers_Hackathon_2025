@@ -1,10 +1,20 @@
 import { AllAgentConfigsType } from "@/app/types";
 import simpleExample from "./simpleExample";
-import workoutPlanner from "./workoutPlanner";
+import workoutPlannerBase from "./workoutPlanner";
+import { getAgentsWithPersonality } from "./workoutPlanner";
+
+// Create specific personality versions of the workout planner
+const davidGogginsAgents = getAgentsWithPersonality("David Goggins");
+const arnoldAgents = getAgentsWithPersonality("Arnold Schawrzenegger");
+const annaAgents = getAgentsWithPersonality("Anna Senyszyn");
 
 export const allAgentSets: AllAgentConfigsType = {
   simpleExample,
-  workoutPlanner,
+  workoutPlanner: workoutPlannerBase,
+  "David Goggins": davidGogginsAgents,
+  "Arnold Schawrzenegger": arnoldAgents,
+  "Anna Senyszyn": annaAgents,
 };
 
-export const defaultAgentSetKey = "simpleExample";
+// Set David Goggins as the default
+export const defaultAgentSetKey = "David Goggins";
