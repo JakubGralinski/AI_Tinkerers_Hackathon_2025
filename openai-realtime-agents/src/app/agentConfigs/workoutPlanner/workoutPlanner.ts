@@ -128,42 +128,57 @@ You have the ability to adapt your communication style based on the profile anal
 ]
 `,
     tools: [
+        // {
+        //     type: "function",
+        //     name: "createWorkoutPlan",
+        //     description: "Generate a personalized workout and nutrition plan based on user profile",
+        //     parameters: {
+        //         type: "object",
+        //         properties: {
+        //             profileData: {
+        //                 type: "object",
+        //                 description: "The user's profile information"
+        //             },
+        //             communicationPreferences: {
+        //                 type: "object",
+        //                 description: "Communication style preferences from profile analysis"
+        //             }
+        //         },
+        //         required: ["profileData"]
+        //     }
+        // },
         {
+
             type: "function",
             name: "createWorkoutPlan",
-            description: "Generate a personalized workout and nutrition plan based on user profile",
+            description: "Create a workout plan based on the user's goals.",
             parameters: {
                 type: "object",
                 properties: {
-                    profileData: {
-                        type: "object",
-                        description: "The user's profile information"
+                    instructions: {
+                        type: "string",
+                        description: "User prompt",
                     },
-                    communicationPreferences: {
-                        type: "object",
-                        description: "Communication style preferences from profile analysis"
-                    }
                 },
-                required: ["profileData"]
-            }
-        }
+                required: ["instructions"],
+            },
+        },
     ],
     toolLogic: {
-        createWorkoutPlan: async (args) => {
-            console.log("Creating workout plan with args:", args);
+        createWorkoutPlan: async ({ instructions }) => {
+            console.log("Creating workout plan with args:", instructions);
 
             try {
                 // Call the Python backend endpoint
-                const response = await fetch("http://localhost:5000/api/python/process", {
+                const response = await fetch("http://127.0.0.1:5000/api/plans/", {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json"
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                        action: "create_workout_plan",
-                        profileData: args.profileData,
-                        communicationPreferences: args.communicationPreferences
-                    })
+                        instructions: instructions,
+                    }),
                 });
 
                 if (!response.ok) {
