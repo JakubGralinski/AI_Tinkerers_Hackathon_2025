@@ -474,13 +474,13 @@ function App() {
             <select
               value={currentPersonality}
               onChange={handlePersonalityChange}
-              className="appearance-none border border-gray-300 rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none"
+              className="appearance-none border border-card-border rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none bg-card-bg text-text-primary focus:border-accent"
             >
               <option value="David Goggins">David Goggins</option>
               <option value="Arnold Schawrzenegger">Arnold Schawrzenegger</option>
               <option value="Anna Senyszyn">Anna Senyszyn</option>
             </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-gray-600">
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2 text-accent">
               <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                 <path
                   fillRule="evenodd"
@@ -497,8 +497,8 @@ function App() {
             <select
               value={currentScenario}
               onChange={handleScenarioChange}
-              className="appearance-none border border-gray-300 rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none"
-              disabled={isPersonality} // Disable if personality is selected
+              className="appearance-none border border-card-border rounded-lg text-base px-2 py-1 pr-8 cursor-pointer font-normal focus:outline-none bg-card-bg text-text-primary focus:border-accent"
+              disabled={isPersonality}
             >
               <option value="workoutPlanner">workoutPlanner</option>
               <option value="simpleExample">simpleExample</option>
