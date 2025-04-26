@@ -5,12 +5,9 @@ import requests
 from dotenv import load_dotenv
 from agents import Agent
 from app.agents.plan.response_schemas import ExercisePlanSchema
+from app.config import Config
 
-# Load .env environment variables
-load_dotenv()
-
-# Constants
-STRAVA_ACCESS_TOKEN = os.getenv("STRAVA_ACCESS_TOKEN")
+STRAVA_ACCESS_TOKEN = Config.STRAVA_ACCESS_TOKEN
 
 # 1. Fetch Strava Activities
 if not STRAVA_ACCESS_TOKEN:

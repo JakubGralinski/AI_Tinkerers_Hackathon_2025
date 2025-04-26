@@ -3,14 +3,9 @@ import json
 import statistics
 from dotenv import load_dotenv
 from openai import OpenAI
+from app.config import Config
 
-load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-with open("mfp_daily_totals_and_menu.json", encoding="utf-8") as f:
-    mfp_data = json.load(f)
-with open("strava_activities.json", encoding="utf-8") as f:
-    strava_data = json.load(f)
+client = OpenAI(api_key=Config.OPENAI_API_KEY)
 
 class NutritionPlannerAgent:
     """
@@ -41,6 +36,7 @@ class NutritionPlannerAgent:
         self.diet_pref       = profile.get("diet_pref", "no preferences")
         self.include_recipes = profile.get("include_recipes", False)
         self.plan_days       = profile.get("plan_days", 3)
+        self.handoffs = []
 
     def summarize_mfp(self, mfp, days=7):
         """Return list of dicts with date and totals for last `days` days"""
@@ -100,7 +96,7 @@ class NutritionPlannerAgent:
         fat  = 0.8 * self.weight_kg
         return round(tdee), round(prot), round(carb), round(fat)
 
-    def plan_meals(self, mfp_data, strava_data) -> str:
+    def plan_meals(self, mfp_data, strava_data, user_input) -> str:
         # Summaries
         mfp_sum    = self.summarize_mfp(mfp_data)
         strava_sum = self.summarize_strava(strava_data)
