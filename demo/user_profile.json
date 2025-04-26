@@ -1,0 +1,8 @@
+{
+    "height_cm": 180,
+    "weight_kg": 80,
+    "diet_pref": "no diary",
+    "daily_budget": 20,
+    "include_recipes": true,
+    "plan_days": 3
+  }

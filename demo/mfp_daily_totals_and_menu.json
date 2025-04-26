@@ -1,0 +1,841 @@
+[
+  {
+    "date": "2025-04-19",
+    "totals": {
+      "calories": 3029.0,
+      "carbohydrates": 401.0,
+      "fat": 67.0,
+      "protein": 165.0,
+      "sodium": 746.0,
+      "sugar": 27.0
+    },
+    "meals": [
+      {
+        "name": "breakfast",
+        "entries": [
+          {
+            "food": "Oatmeal - Regular Oatmeal, 1 pkg",
+            "totals": {
+              "calories": 100.0,
+              "carbohydrates": 19.0,
+              "fat": 2.0,
+              "protein": 4.0,
+              "sodium": 80.0,
+              "sugar": 1.0
+            }
+          },
+          {
+            "food": "Banana, 1 medium",
+            "totals": {
+              "calories": 105.0,
+              "carbohydrates": 27.0,
+              "fat": 0.0,
+              "protein": 1.0,
+              "sodium": 1.0,
+              "sugar": 14.0
+            }
+          },
+          {
+            "food": "Milk, reduced fat, 2%, 1 cup",
+            "totals": {
+              "calories": 122.0,
+              "carbohydrates": 12.0,
+              "fat": 5.0,
+              "protein": 8.0,
+              "sodium": 95.0,
+              "sugar": 12.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "lunch",
+        "entries": [
+          {
+            "food": "Homemade - Pasta Bolognese, 1 serving",
+            "totals": {
+              "calories": 750.0,
+              "carbohydrates": 55.0,
+              "fat": 12.0,
+              "protein": 40.0,
+              "sodium": 570.0,
+              "sugar": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "dinner",
+        "entries": [
+          {
+            "food": "southwestern pizza - Pizza, 8 pieces",
+            "totals": {
+              "calories": 1952.0,
+              "carbohydrates": 288.0,
+              "fat": 48.0,
+              "protein": 112.0,
+              "sodium": 0.0,
+              "sugar": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "snacks",
+        "entries": []
+      }
+    ]
+  },
+  {
+    "date": "2025-04-20",
+    "totals": {
+      "calories": 2337.0,
+      "carbohydrates": 159.0,
+      "fat": 130.0,
+      "protein": 130.0,
+      "sodium": 2646.0,
+      "sugar": 105.0
+    },
+    "meals": [
+      {
+        "name": "breakfast",
+        "entries": [
+          {
+            "food": "Eggs, scrambled, 8 eggs",
+            "totals": {
+              "calories": 814.0,
+              "carbohydrates": 4.0,
+              "fat": 66.0,
+              "protein": 51.0,
+              "sodium": 1091.0,
+              "sugar": 1.0
+            }
+          },
+          {
+            "food": "Ham, 1 thin slice",
+            "totals": {
+              "calories": 70.0,
+              "carbohydrates": 1.0,
+              "fat": 2.0,
+              "protein": 11.0,
+              "sodium": 690.0,
+              "sugar": 1.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "lunch",
+        "entries": [
+          {
+            "food": "Tesco - Skinless Chicken Thighs, 200 g",
+            "totals": {
+              "calories": 322.0,
+              "carbohydrates": 0.0,
+              "fat": 20.0,
+              "protein": 37.0,
+              "sodium": 20.0,
+              "sugar": 0.0
+            }
+          },
+          {
+            "food": "White rice, cooked, 1 cup",
+            "totals": {
+              "calories": 204.0,
+              "carbohydrates": 44.0,
+              "fat": 0.0,
+              "protein": 4.0,
+              "sodium": 387.0,
+              "sugar": 0.0
+            }
+          },
+          {
+            "food": "Tomato, 1 medium",
+            "totals": {
+              "calories": 22.0,
+              "carbohydrates": 5.0,
+              "fat": 0.0,
+              "protein": 1.0,
+              "sodium": 6.0,
+              "sugar": 3.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "dinner",
+        "entries": [
+          {
+            "food": "Broccoli, 1 cup",
+            "totals": {
+              "calories": 35.0,
+              "carbohydrates": 6.0,
+              "fat": 0.0,
+              "protein": 2.0,
+              "sodium": 32.0,
+              "sugar": 1.0
+            }
+          },
+          {
+            "food": "The Greek Gods Greek Yogurt - Greek Yogurt, 1 cup",
+            "totals": {
+              "calories": 290.0,
+              "carbohydrates": 33.0,
+              "fat": 14.0,
+              "protein": 8.0,
+              "sodium": 140.0,
+              "sugar": 33.0
+            }
+          },
+          {
+            "food": "The Greek Gods Greek Yogurt - Greek Yogurt, 1 cup",
+            "totals": {
+              "calories": 290.0,
+              "carbohydrates": 33.0,
+              "fat": 14.0,
+              "protein": 8.0,
+              "sodium": 140.0,
+              "sugar": 33.0
+            }
+          },
+          {
+            "food": "The Greek Gods Greek Yogurt - Greek Yogurt, 1 cup",
+            "totals": {
+              "calories": 290.0,
+              "carbohydrates": 33.0,
+              "fat": 14.0,
+              "protein": 8.0,
+              "sodium": 140.0,
+              "sugar": 33.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "snacks",
+        "entries": []
+      }
+    ]
+  },
+  {
+    "date": "2025-04-21",
+    "totals": {
+      "calories": 2879.0,
+      "carbohydrates": 395.0,
+      "fat": 84.0,
+      "protein": 148.0,
+      "sodium": 2139.0,
+      "sugar": 77.0
+    },
+    "meals": [
+      {
+        "name": "breakfast",
+        "entries": [
+          {
+            "food": "Corn flakes, 7 cup",
+            "totals": {
+              "calories": 625.0,
+              "carbohydrates": 147.0,
+              "fat": 1.0,
+              "protein": 13.0,
+              "sodium": 1276.0,
+              "sugar": 17.0
+            }
+          },
+          {
+            "food": "Milk, reduced fat, 2%, 5 cup",
+            "totals": {
+              "calories": 610.0,
+              "carbohydrates": 60.0,
+              "fat": 23.0,
+              "protein": 41.0,
+              "sodium": 476.0,
+              "sugar": 60.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "lunch",
+        "entries": [
+          {
+            "food": "White rice, cooked, 1 cup",
+            "totals": {
+              "calories": 204.0,
+              "carbohydrates": 44.0,
+              "fat": 0.0,
+              "protein": 4.0,
+              "sodium": 387.0,
+              "sugar": 0.0
+            }
+          },
+          {
+            "food": "Minced meat - Minced meat, 500 gram",
+            "totals": {
+              "calories": 232.0,
+              "carbohydrates": 0.0,
+              "fat": 18.0,
+              "protein": 17.0,
+              "sodium": 0.0,
+              "sugar": 0.0
+            }
+          },
+          {
+            "food": "Minced meat - Minced meat, 500 gram",
+            "totals": {
+              "calories": 232.0,
+              "carbohydrates": 0.0,
+              "fat": 18.0,
+              "protein": 17.0,
+              "sodium": 0.0,
+              "sugar": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "dinner",
+        "entries": [
+          {
+            "food": "southwestern pizza - Pizza, 4 pieces",
+            "totals": {
+              "calories": 976.0,
+              "carbohydrates": 144.0,
+              "fat": 24.0,
+              "protein": 56.0,
+              "sodium": 0.0,
+              "sugar": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "snacks",
+        "entries": []
+      }
+    ]
+  },
+  {
+    "date": "2025-04-22",
+    "totals": {
+      "calories": 2439.0,
+      "carbohydrates": 204.0,
+      "fat": 124.0,
+      "protein": 137.0,
+      "sodium": 2255.0,
+      "sugar": 54.0
+    },
+    "meals": [
+      {
+        "name": "breakfast",
+        "entries": [
+          {
+            "food": "Simply Orange - Orange Juice, 340 ml",
+            "totals": {
+              "calories": 160.0,
+              "carbohydrates": 37.0,
+              "fat": 0.0,
+              "protein": 2.0,
+              "sodium": 0.0,
+              "sugar": 33.0
+            }
+          },
+          {
+            "food": "Homemade - Omlette, 100 g",
+            "totals": {
+              "calories": 155.0,
+              "carbohydrates": 1.0,
+              "fat": 11.0,
+              "protein": 13.0,
+              "sodium": 124.0,
+              "sugar": 1.0
+            }
+          },
+          {
+            "food": "Homemade - Omlette, 100 g",
+            "totals": {
+              "calories": 155.0,
+              "carbohydrates": 1.0,
+              "fat": 11.0,
+              "protein": 13.0,
+              "sodium": 124.0,
+              "sugar": 1.0
+            }
+          },
+          {
+            "food": "Bun - Bun, 1 roll",
+            "totals": {
+              "calories": 120.0,
+              "carbohydrates": 23.0,
+              "fat": 2.0,
+              "protein": 4.0,
+              "sodium": 210.0,
+              "sugar": 3.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "lunch",
+        "entries": [
+          {
+            "food": "French fries, 3 oz straight cut fries",
+            "totals": {
+              "calories": 191.0,
+              "carbohydrates": 20.0,
+              "fat": 12.0,
+              "protein": 2.0,
+              "sodium": 251.0,
+              "sugar": 0.0
+            }
+          },
+          {
+            "food": "bubba burger - Burger, 2 burger",
+            "totals": {
+              "calories": 840.0,
+              "carbohydrates": 0.0,
+              "fat": 70.0,
+              "protein": 50.0,
+              "sodium": 170.0,
+              "sugar": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "dinner",
+        "entries": [
+          {
+            "food": "Homemade - Pasta Carbonara, 2 portion",
+            "totals": {
+              "calories": 818.0,
+              "carbohydrates": 122.0,
+              "fat": 18.0,
+              "protein": 53.0,
+              "sodium": 1376.0,
+              "sugar": 16.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "snacks",
+        "entries": []
+      }
+    ]
+  },
+  {
+    "date": "2025-04-23",
+    "totals": {
+      "calories": 2231.0,
+      "carbohydrates": 315.0,
+      "fat": 54.0,
+      "protein": 124.0,
+      "sodium": 3039.0,
+      "sugar": 95.0
+    },
+    "meals": [
+      {
+        "name": "breakfast",
+        "entries": [
+          {
+            "food": "Granola, 0.5 cup",
+            "totals": {
+              "calories": 231.0,
+              "carbohydrates": 37.0,
+              "fat": 7.0,
+              "protein": 5.0,
+              "sodium": 89.0,
+              "sugar": 12.0
+            }
+          },
+          {
+            "food": "Løgismøse - Skyr Natur, 600 g",
+            "totals": {
+              "calories": 342.0,
+              "carbohydrates": 21.0,
+              "fat": 1.0,
+              "protein": 60.0,
+              "sodium": 540.0,
+              "sugar": 18.0
+            }
+          },
+          {
+            "food": "Banana, 1 medium",
+            "totals": {
+              "calories": 105.0,
+              "carbohydrates": 27.0,
+              "fat": 0.0,
+              "protein": 1.0,
+              "sodium": 1.0,
+              "sugar": 14.0
+            }
+          },
+          {
+            "food": "Banana, 1 medium",
+            "totals": {
+              "calories": 105.0,
+              "carbohydrates": 27.0,
+              "fat": 0.0,
+              "protein": 1.0,
+              "sodium": 1.0,
+              "sugar": 14.0
+            }
+          },
+          {
+            "food": "Honey, 1 tsp",
+            "totals": {
+              "calories": 20.0,
+              "carbohydrates": 5.0,
+              "fat": 0.0,
+              "protein": 0.0,
+              "sodium": 0.0,
+              "sugar": 5.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "lunch",
+        "entries": [
+          {
+            "food": "Smaczne Sekrety - Buritto, 400 gram",
+            "totals": {
+              "calories": 1120.0,
+              "carbohydrates": 134.0,
+              "fat": 43.0,
+              "protein": 48.0,
+              "sodium": 2400.0,
+              "sugar": 6.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "dinner",
+        "entries": [
+          {
+            "food": "Apple, 1 small",
+            "totals": {
+              "calories": 86.0,
+              "carbohydrates": 23.0,
+              "fat": 0.0,
+              "protein": 0.0,
+              "sodium": 2.0,
+              "sugar": 17.0
+            }
+          },
+          {
+            "food": "Toast - Whole Grain Toast, 2 slice",
+            "totals": {
+              "calories": 200.0,
+              "carbohydrates": 36.0,
+              "fat": 3.0,
+              "protein": 8.0,
+              "sodium": 0.0,
+              "sugar": 6.0
+            }
+          },
+          {
+            "food": "Tomato, 1 medium",
+            "totals": {
+              "calories": 22.0,
+              "carbohydrates": 5.0,
+              "fat": 0.0,
+              "protein": 1.0,
+              "sodium": 6.0,
+              "sugar": 3.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "snacks",
+        "entries": []
+      }
+    ]
+  },
+  {
+    "date": "2025-04-24",
+    "totals": {
+      "calories": 2478.0,
+      "carbohydrates": 348.0,
+      "fat": 68.0,
+      "protein": 137.0,
+      "sodium": 146.0,
+      "sugar": 48.0
+    },
+    "meals": [
+      {
+        "name": "breakfast",
+        "entries": [
+          {
+            "food": "protein shake vanilla - protein shake vanilla, 300 ml",
+            "totals": {
+              "calories": 312.0,
+              "carbohydrates": 17.0,
+              "fat": 13.0,
+              "protein": 33.0,
+              "sodium": 0.0,
+              "sugar": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "lunch",
+        "entries": [
+          {
+            "food": "southwestern pizza - Pizza, 6 pieces",
+            "totals": {
+              "calories": 1464.0,
+              "carbohydrates": 216.0,
+              "fat": 36.0,
+              "protein": 84.0,
+              "sodium": 0.0,
+              "sugar": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "dinner",
+        "entries": [
+          {
+            "food": "Banana, 1 medium",
+            "totals": {
+              "calories": 105.0,
+              "carbohydrates": 27.0,
+              "fat": 0.0,
+              "protein": 1.0,
+              "sodium": 1.0,
+              "sugar": 14.0
+            }
+          },
+          {
+            "food": "The Greek Gods Greek Yogurt - Greek Yogurt, 1 cup",
+            "totals": {
+              "calories": 290.0,
+              "carbohydrates": 33.0,
+              "fat": 14.0,
+              "protein": 8.0,
+              "sodium": 140.0,
+              "sugar": 33.0
+            }
+          },
+          {
+            "food": "Oats, 1 cup",
+            "totals": {
+              "calories": 307.0,
+              "carbohydrates": 55.0,
+              "fat": 5.0,
+              "protein": 11.0,
+              "sodium": 5.0,
+              "sugar": 1.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "snacks",
+        "entries": []
+      }
+    ]
+  },
+  {
+    "date": "2025-04-25",
+    "totals": {
+      "calories": 2365.0,
+      "carbohydrates": 346.0,
+      "fat": 55.0,
+      "protein": 140.0,
+      "sodium": 3128.0,
+      "sugar": 93.0
+    },
+    "meals": [
+      {
+        "name": "breakfast",
+        "entries": [
+          {
+            "food": "protein shake vanilla - protein shake vanilla, 300 ml",
+            "totals": {
+              "calories": 312.0,
+              "carbohydrates": 17.0,
+              "fat": 13.0,
+              "protein": 33.0,
+              "sodium": 0.0,
+              "sugar": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "lunch",
+        "entries": [
+          {
+            "food": "Homemade - Pasta Carbonara, 2 portion",
+            "totals": {
+              "calories": 818.0,
+              "carbohydrates": 122.0,
+              "fat": 18.0,
+              "protein": 53.0,
+              "sodium": 1376.0,
+              "sugar": 16.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "dinner",
+        "entries": [
+          {
+            "food": "Corn flakes, 7 cup",
+            "totals": {
+              "calories": 625.0,
+              "carbohydrates": 147.0,
+              "fat": 1.0,
+              "protein": 13.0,
+              "sodium": 1276.0,
+              "sugar": 17.0
+            }
+          },
+          {
+            "food": "Milk, reduced fat, 2%, 5 cup",
+            "totals": {
+              "calories": 610.0,
+              "carbohydrates": 60.0,
+              "fat": 23.0,
+              "protein": 41.0,
+              "sodium": 476.0,
+              "sugar": 60.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "snacks",
+        "entries": []
+      }
+    ]
+  },
+  {
+    "date": "2025-04-26",
+    "totals": {
+      "calories": 2525.0,
+      "carbohydrates": 220.0,
+      "fat": 124.0,
+      "protein": 140.0,
+      "sodium": 1667.0,
+      "sugar": 8.0
+    },
+    "meals": [
+      {
+        "name": "breakfast",
+        "entries": [
+          {
+            "food": "Egg, 8 egg",
+            "totals": {
+              "calories": 572.0,
+              "carbohydrates": 4.0,
+              "fat": 40.0,
+              "protein": 50.0,
+              "sodium": 516.0,
+              "sugar": 1.0
+            }
+          },
+          {
+            "food": "White bread, 1 slice",
+            "totals": {
+              "calories": 75.0,
+              "carbohydrates": 14.0,
+              "fat": 1.0,
+              "protein": 3.0,
+              "sodium": 134.0,
+              "sugar": 1.0
+            }
+          },
+          {
+            "food": "White bread, 1 slice",
+            "totals": {
+              "calories": 75.0,
+              "carbohydrates": 14.0,
+              "fat": 1.0,
+              "protein": 3.0,
+              "sodium": 134.0,
+              "sugar": 1.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "lunch",
+        "entries": [
+          {
+            "food": "Steak, raw, 6 oz",
+            "totals": {
+              "calories": 389.0,
+              "carbohydrates": 0.0,
+              "fat": 22.0,
+              "protein": 46.0,
+              "sodium": 627.0,
+              "sugar": 0.0
+            }
+          },
+          {
+            "food": "French fries, 3 oz straight cut fries",
+            "totals": {
+              "calories": 191.0,
+              "carbohydrates": 20.0,
+              "fat": 12.0,
+              "protein": 2.0,
+              "sodium": 251.0,
+              "sugar": 0.0
+            }
+          },
+          {
+            "food": "Red Pepper, 1 pepper",
+            "totals": {
+              "calories": 31.0,
+              "carbohydrates": 12.0,
+              "fat": 0.0,
+              "protein": 1.0,
+              "sodium": 5.0,
+              "sugar": 5.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "dinner",
+        "entries": [
+          {
+            "food": "Burito A L - Burito, 100 g",
+            "totals": {
+              "calories": 298.0,
+              "carbohydrates": 39.0,
+              "fat": 12.0,
+              "protein": 9.0,
+              "sodium": 0.0,
+              "sugar": 0.0
+            }
+          },
+          {
+            "food": "Burito A L - Burito, 300 g",
+            "totals": {
+              "calories": 894.0,
+              "carbohydrates": 117.0,
+              "fat": 36.0,
+              "protein": 26.0,
+              "sodium": 0.0,
+              "sugar": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "snacks",
+        "entries": []
+      }
+    ]
+  }
+]
