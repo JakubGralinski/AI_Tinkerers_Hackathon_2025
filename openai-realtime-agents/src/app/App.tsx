@@ -503,7 +503,6 @@ function App() {
             dcRef.current?.readyState === "open"
           }
         />
-
         <Events isExpanded={isEventsPaneExpanded} />
       </div>
 
