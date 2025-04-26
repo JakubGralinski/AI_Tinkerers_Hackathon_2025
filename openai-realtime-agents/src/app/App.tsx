@@ -453,10 +453,10 @@ function App() {
         <div className="flex items-center">
           <div onClick={() => window.location.reload()} style={{ cursor: 'pointer' }}>
             <Image
-              src="/openai-logomark.svg"
-              alt="OpenAI Logo"
-              width={20}
-              height={20}
+              src="/CrunchByteLogo.svg"
+              alt="CrunchByte Logo"
+              width={60}
+              height={60}
               className="mr-2"
             />
           </div>
