@@ -14,7 +14,7 @@ summary = "\n".join([
     for a in activities
 ])
 
-coach_prompt = f"""
+prompt_coach = f"""
 You are an experienced personal coach and professional training planner AI.
 
 Here is the user's complete workout history from Strava:
@@ -25,28 +25,26 @@ User details:
 - Height: 180 cm
 - Weight: 80 kg
 - Training Goal: Improve endurance and strength.
-- If there's a gym session, then no run on that day, and vice versa.
+- I'm allergic and i have deutronopia.
+- If there's a gym session, then no run and vice versa
 
 Your task:
-- Analyze the complete workout history.
-- Identify training gaps, overtraining risks, or missing elements.
-- Create a detailed **7-day training plan**.
-- For each train day, list **multiple exercises**.
-- Each exercise must include:
-    - Exercise name
-    - Number of sets
-    - Number of reps
-    - Rest time in seconds
-- Recommend modifications for injury prevention.
-- Ensure the plan supports gradual performance progression.
-- Be realistic, motivating and customized.
+- Analyze the complete workout history
+- Identify training gaps, overtraining risks, or missing elements
+- Analyze regarding diseases
+- Create a detailed 7-day training plan
+- The plan should include specific workout types, target duration, intensity levels, and recovery days
+- Recommend any modifications for injury prevention
+- Ensure the plan supports gradual performance progression
+- Be realistic and motivating
+- To each exercise send a validated URL link to a youtube video showing the proper technique
 
-Respond strictly following the ExercisePlanSchema output model.
+Start your response with an encouraging message!
 """
 
 exercise_plan_agent = Agent(
     name="Exercise Planner",
-    instructions=coach_prompt,
+    instructions=prompt_coach,
     output_type=ExercisePlanSchema,
     model="o3"
 )
