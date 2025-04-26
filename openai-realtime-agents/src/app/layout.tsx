@@ -18,7 +18,7 @@ if (typeof window !== 'undefined') {
 }
 
 export const metadata: Metadata = {
-  title: "AI Wellness Coach",
+  title: "CrunchByte",
   description: "OpenAI agentic wellness coach",
 };
 

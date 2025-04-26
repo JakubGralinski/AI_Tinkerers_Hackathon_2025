@@ -463,7 +463,7 @@ function App() {
             />
           </div>
           <div>
-            AI Wellness <span className="text-gray-500">Agents</span>
+            CrunchByte <span className="text-gray-500">Agents</span>
           </div>
         </div>
         <div className="flex items-center">
