@@ -3,9 +3,14 @@ import json
 import statistics
 from dotenv import load_dotenv
 from openai import OpenAI
-from app.config import Config
 
-client = OpenAI(api_key=Config.OPENAI_API_KEY)
+load_dotenv()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+with open("mfp_daily_totals_and_menu.json", encoding="utf-8") as f:
+    mfp_data = json.load(f)
+with open("strava_activities.json", encoding="utf-8") as f:
+    strava_data = json.load(f)
 
 class NutritionPlannerAgent:
     """
@@ -25,18 +30,6 @@ class NutritionPlannerAgent:
         self.diet_pref       = profile.get("diet_pref", "no preferences")
         self.include_recipes = profile.get("include_recipes", False)
         self.plan_days       = profile.get("plan_days", 3)
-        # OpenAI client
-        self.client = client
-        # Load user profile from JSON
-        with open(user_profile_path, encoding="utf-8") as pf:
-            profile = json.load(pf)
-        self.height_cm       = profile.get("height_cm")
-        self.weight_kg       = profile.get("weight_kg")
-        self.daily_budget    = profile.get("daily_budget")
-        self.diet_pref       = profile.get("diet_pref", "no preferences")
-        self.include_recipes = profile.get("include_recipes", False)
-        self.plan_days       = profile.get("plan_days", 3)
-        self.handoffs = []
 
     def summarize_mfp(self, mfp, days=7):
         """Return list of dicts with date and totals for last `days` days"""
@@ -96,7 +89,7 @@ class NutritionPlannerAgent:
         fat  = 0.8 * self.weight_kg
         return round(tdee), round(prot), round(carb), round(fat)
 
-    def plan_meals(self, mfp_data, strava_data, user_input) -> str:
+    def plan_meals(self, mfp_data, strava_data):
         # Summaries
         mfp_sum    = self.summarize_mfp(mfp_data)
         strava_sum = self.summarize_strava(strava_data)
@@ -105,7 +98,6 @@ class NutritionPlannerAgent:
         # Predict targets
         target_cal, target_prot, target_carb, target_fat = self._predict_targets(strava_sum)
 
-        # Build prompt
         # Build prompt
         prompt = f"""
         You are a professional AI Nutritionist and Fitness Coach.
@@ -151,7 +143,7 @@ class NutritionPlannerAgent:
             - Short preparation instructions
         """
         if self.include_recipes:
-            prompt += "- Additionally, suggest a URL link to a trusted recipe website for each dish.\n"
+            prompt += "- Additionally, suggest a validated URL link to a trusted recipe youtube video for each dish, that is no older than 6 months.\n"
 
         prompt += f"""
         Constraints:
