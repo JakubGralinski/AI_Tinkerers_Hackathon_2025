@@ -5,6 +5,7 @@ from app.agents.plan.response_schemas import ExercisePlanSchema
 from app.agents.plan.tool_wrapper import Tool
 from openai import OpenAI
 from agents import Agent, Runner
+from app.agents.plan.plan_mgr_agent import PlanManagerAgent
 import json
 from app.config import Config
 
@@ -27,28 +28,16 @@ async def plan_week(user_prompt: str):
         Tool(name="Exercise Planner", description="Creates a weekly training plan based on Strava activities and fitness goals.", agent=exercise_plan_agent),
     ]
     
-    plan_manager_agent = Agent(
+    plan_manager = PlanManagerAgent(
         name="Plan Manager",
-        instructions=(
-            "You are a fitness and nutrition manager AI.\n"
-            "Based on the user's request, you decide whether to use the Meal Planner agent "
-            "or the Exercise Planner agent or both. "
-            "Return the correct agent's response or both of thems combined. Always use at least one of them. You can combine their responses, but do not return anything not from those tools."
-        ),
-        handoffs=tools,
-        model="gpt-4o"
+        handoffs=tools
     )
 
-    result = await Runner.run(plan_manager_agent, user_prompt)
-    
-    try:
-        return {
-            "plan": result.final_output.model_dump(),
-        }
-    except Exception:
-        return {
-            "plan": result.final_output,
-        }
+    plan = await plan_manager.run(user_prompt)
+
+    return {
+        "plan": plan
+    }
     
 
     
