@@ -12,7 +12,7 @@ CrunchByte is an innovative AI-powered personal health and fitness assistant tha
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/crunchbyte.git
+git clone git@github.com:JakubGralinski/AI_Tinkerers_Hackathon_2025.git
 cd crunchbyte
 ```
 
@@ -36,9 +36,9 @@ CrunchByte requires several API keys to function. Here's how to obtain and confi
 - Sign up or log in to your account
 - Navigate to API Keys section
 - Create a new API key
-- Add to your environment variables:
-```bash
-export OPENAI_API_KEY='your-api-key-here'
+- Add to your `.env` file:
+```
+OPENAI_API_KEY=your-api-key-here
 ```
 
 ### 2. Google Calendar API
@@ -54,10 +54,10 @@ export OPENAI_API_KEY='your-api-key-here'
 1. Visit [Strava API Settings](https://www.strava.com/settings/api)
 2. Create a new application
 3. Note down your Client ID and Client Secret
-4. Add to your environment variables:
-```bash
-export STRAVA_CLIENT_ID='your-client-id'
-export STRAVA_CLIENT_SECRET='your-client-secret'
+4. Add to your `.env` file:
+```
+STRAVA_CLIENT_ID=your-client-id
+STRAVA_CLIENT_SECRET=your-client-secret
 ```
 
 ### 4. MyFitnessPal Integration
@@ -65,9 +65,9 @@ MyFitnessPal integration requires your account credentials and uses browser auto
 
 1. Create a MyFitnessPal account at [MyFitnessPal](https://www.myfitnesspal.com/)
 2. Add your credentials to the `.env` file:
-```bash
-MFP_USERNAME='your-myfitnesspal-email'
-MFP_PASSWORD='your-myfitnesspal-password'
+```
+MFP_USERNAME=your-myfitnesspal-email
+MFP_PASSWORD=your-myfitnesspal-password
 ```
 
 Note: The MyFitnessPal integration uses browser automation to fetch your nutrition data. Make sure you have a stable internet connection when using this feature.
@@ -80,7 +80,7 @@ touch .env
 ```
 
 2. Add your API keys and configuration:
-```env
+```
 OPENAI_API_KEY=your-openai-api-key
 STRAVA_CLIENT_ID=your-strava-client-id
 STRAVA_CLIENT_SECRET=your-strava-client-secret
